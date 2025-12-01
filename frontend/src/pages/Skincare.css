@@ -1,0 +1,613 @@
+/* Section Titles */
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.section-title.white-title {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Hero title styles for skincare page */
+.skincare-page .hero-title .white-text {
+  color: white !important;
+  -webkit-text-fill-color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.skincare-page .hero-title .pink-text {
+  color: #ff69b4 !important;
+  -webkit-text-fill-color: #ff69b4 !important;
+  text-shadow: 0 2px 4px rgba(255, 105, 180, 0.3);
+}
+
+.skincare-page .hero-title .star-container {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.skincare-page .hero-title .gold-star-icon {
+  color: #FFD700 !important;
+  -webkit-text-fill-color: #FFD700 !important;
+  font-size: 2.5rem;
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(255, 215, 0, 0.6),
+    0 0 30px rgba(255, 215, 0, 0.4);
+  animation: gold-shine 2s ease-in-out infinite, bounce-star 2s ease-in-out infinite;
+}
+
+@keyframes bounce-star {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes gold-shine {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; text-shadow: 0 0 15px rgba(255, 215, 0, 1), 0 0 30px rgba(255, 215, 0, 0.8), 0 0 45px rgba(255, 215, 0, 0.6); }
+}
+
+/* CSS Bow for section title */
+.css-bow-small {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 16px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.css-bow-small::before,
+.css-bow-small::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  width: 10px;
+  height: 12px;
+  background: #ff69b4;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  opacity: 0.9;
+}
+
+.css-bow-small::before {
+  left: 0;
+  transform: rotate(-15deg);
+}
+
+.css-bow-small::after {
+  right: 0;
+  transform: rotate(15deg);
+}
+
+/* Skin Type Section */
+.skin-type-section {
+  margin-bottom: 3rem;
+}
+
+.skin-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.skin-type-btn {
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--pearl);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.skin-type-btn:hover {
+  border-color: var(--soft-rose);
+  transform: translateY(-2px);
+}
+
+.skin-type-btn.active {
+  border-color: var(--deep-rose);
+  background: linear-gradient(135deg, rgba(248, 200, 220, 0.3) 0%, rgba(255, 255, 255, 0.8) 100%);
+}
+
+.skin-type-name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: #ff69b4;
+  margin-bottom: 0.375rem;
+}
+
+.skin-type-desc {
+  display: block;
+  font-size: 0.8rem;
+  color: #e891a8;
+  line-height: 1.4;
+}
+
+.skin-type-tips {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, rgba(247, 231, 206, 0.5) 0%, rgba(255, 255, 255, 0.6) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(247, 231, 206, 0.5);
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.tips-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.skin-type-tips p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Routine Section */
+.routine-section {
+  margin-bottom: 3rem;
+}
+
+.routine-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.routine-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--pearl);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+.routine-step:hover {
+  border-color: var(--soft-rose);
+  transform: translateY(-2px);
+}
+
+.routine-step.active {
+  border-color: var(--deep-rose);
+  background: linear-gradient(135deg, rgba(248, 200, 220, 0.3) 0%, rgba(255, 255, 255, 0.8) 100%);
+}
+
+.step-icon {
+  font-size: 1.75rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cleanser Icon - Bottle */
+.cleanser-icon {
+  position: relative;
+  width: 1.5rem;
+  height: 2rem;
+}
+
+.cleanser-icon::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.2rem;
+  height: 1.5rem;
+  background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%);
+  border-radius: 4px 4px 8px 8px;
+}
+
+.cleanser-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.6rem;
+  height: 0.5rem;
+  background: #ff69b4;
+  border-radius: 2px 2px 0 0;
+}
+
+/* Toner Icon - Water Drop */
+.toner-icon {
+  position: relative;
+  width: 1.2rem;
+  height: 1.6rem;
+}
+
+.toner-icon::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #87CEEB 0%, #4169E1 100%);
+  border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+  clip-path: polygon(50% 0%, 100% 60%, 80% 100%, 20% 100%, 0% 60%);
+}
+
+/* Serum Icon - Sparkle/Star */
+.serum-icon {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.serum-icon::before {
+  content: '✦';
+  font-size: 1.5rem;
+  color: #FFD700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+/* Moisturizer Icon - Flower */
+.moisturizer-icon {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.moisturizer-icon::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ff69b4;
+  border-radius: 50%;
+  box-shadow: 
+    0.5rem 0 0 #ffb6c1,
+    -0.5rem 0 0 #ffb6c1,
+    0 0.5rem 0 #ffb6c1,
+    0 -0.5rem 0 #ffb6c1;
+  transform: scale(0.4);
+}
+
+/* Sunscreen Icon - Sun */
+.sunscreen-icon {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.sunscreen-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.8rem;
+  height: 0.8rem;
+  background: #FFD700;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 0 3px #FFA500,
+    0 -0.7rem 0 2px #FFD700,
+    0 0.7rem 0 2px #FFD700,
+    0.7rem 0 0 2px #FFD700,
+    -0.7rem 0 0 2px #FFD700,
+    0.5rem -0.5rem 0 2px #FFD700,
+    -0.5rem 0.5rem 0 2px #FFD700,
+    0.5rem 0.5rem 0 2px #FFD700,
+    -0.5rem -0.5rem 0 2px #FFD700;
+}
+
+/* Mask Icon - Face Mask */
+.mask-icon {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mask-icon::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #DDA0DD 0%, #BA55D3 100%);
+  border-radius: 50% 50% 45% 45%;
+  mask-image: radial-gradient(circle at 30% 40%, transparent 8%, black 8%), 
+              radial-gradient(circle at 70% 40%, transparent 8%, black 8%);
+  -webkit-mask-image: radial-gradient(circle at 30% 40%, transparent 8%, black 8%), 
+                      radial-gradient(circle at 70% 40%, transparent 8%, black 8%);
+}
+
+.mask-icon::after {
+  content: '';
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.4rem;
+  height: 0.2rem;
+  background: #9932CC;
+  border-radius: 0 0 50% 50%;
+}
+
+/* Product icon in cards */
+.product-icon {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+}
+
+.product-icon.cleanser-icon::before {
+  width: 0.8rem;
+  height: 1rem;
+  border-radius: 2px 2px 4px 4px;
+}
+
+.product-icon.cleanser-icon::after {
+  width: 0.4rem;
+  height: 0.3rem;
+}
+
+.product-icon.toner-icon {
+  width: 0.8rem;
+  height: 1rem;
+}
+
+.product-icon.serum-icon::before {
+  font-size: 1rem;
+}
+
+.product-icon.moisturizer-icon::before {
+  transform: scale(0.3);
+}
+
+.product-icon.sunscreen-icon::before {
+  width: 0.5rem;
+  height: 0.5rem;
+  box-shadow: 
+    0 0 0 2px #FFA500,
+    0 -0.4rem 0 1px #FFD700,
+    0 0.4rem 0 1px #FFD700,
+    0.4rem 0 0 1px #FFD700,
+    -0.4rem 0 0 1px #FFD700;
+}
+
+.product-icon.mask-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.step-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.step-order {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Products Section */
+.products-section {
+  margin-bottom: 2rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.875rem;
+  background: linear-gradient(135deg, var(--champagne) 0%, var(--pearl) 100%);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+.product-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+.product-description {
+  font-size: 0.95rem;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.product-details {
+  margin-bottom: 1.25rem;
+}
+
+.detail-block {
+  padding: 0.875rem;
+  background: rgba(248, 200, 220, 0.1);
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.detail-block:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.375rem;
+}
+
+/* Small star icon for benefits */
+.star-icon-small {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  position: relative;
+}
+
+.star-icon-small::before {
+  content: '✦';
+  color: #FFD700;
+  font-size: 0.9em;
+  text-shadow: 0 0 4px rgba(255, 215, 0, 0.6);
+}
+
+/* Small sparkle icon for how to use */
+.sparkle-icon-small {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  position: relative;
+}
+
+.sparkle-icon-small::before {
+  content: '✧';
+  color: #FFD700;
+  font-size: 0.9em;
+  text-shadow: 0 0 4px rgba(255, 215, 0, 0.6);
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.detail-block p {
+  font-size: 0.85rem;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.add-to-routine-btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Detailed Flower Icon for buttons */
+.btn-flower-icon {
+  position: relative;
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: middle;
+  margin-left: 0.25em;
+}
+
+.btn-flower-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.35em;
+  height: 0.35em;
+  background: #FFD700;
+  border-radius: 50%;
+  box-shadow: 0 0 3px rgba(255, 215, 0, 0.6);
+}
+
+.btn-flower-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1em;
+  height: 1em;
+  background: 
+    radial-gradient(ellipse 40% 60% at 50% 15%, #ff69b4 45%, transparent 50%),
+    radial-gradient(ellipse 40% 60% at 85% 50%, #ff69b4 45%, transparent 50%),
+    radial-gradient(ellipse 40% 60% at 50% 85%, #ff69b4 45%, transparent 50%),
+    radial-gradient(ellipse 40% 60% at 15% 50%, #ff69b4 45%, transparent 50%),
+    radial-gradient(ellipse 35% 50% at 75% 25%, #ffb6c1 40%, transparent 45%),
+    radial-gradient(ellipse 35% 50% at 75% 75%, #ffb6c1 40%, transparent 45%),
+    radial-gradient(ellipse 35% 50% at 25% 75%, #ffb6c1 40%, transparent 45%),
+    radial-gradient(ellipse 35% 50% at 25% 25%, #ffb6c1 40%, transparent 45%);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.empty-icon {
+  display: block;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skin-type-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .routine-steps {
+    gap: 0.5rem;
+  }
+  
+  .routine-step {
+    padding: 0.75rem 1rem;
+    min-width: auto;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+

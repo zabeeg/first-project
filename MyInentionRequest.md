@@ -1,10 +1,6 @@
-## Project Overview
+## Project Overview you’re building, who it’s for, and why.
 
-> Briefly describe what you’re building, who it’s for, and why.
-
-**Your Requirements**
-
-> List high-level goals, non-functional requirements, or constraints.
+**Your Requirements*i want this game to be called "betterMe" the theme will be very coquette and girly. i want there to be variouss sections of workouts. outfit inspo. and healthy skincare for you skin each in a few diffrent sections. {you can add more if you like} this game is meant for girls who like too workout or find trendy stuff for them self and maybe find some good skincare for them selfs. its to make girls more confident, and happy with what they are doing.
 
 ---
 

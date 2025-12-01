@@ -1,0 +1,1638 @@
+/* Outfits Page Layout */
+.outfits-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Filter Sidebar */
+.filter-sidebar {
+  position: sticky;
+  top: 100px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  padding: 1.5rem;
+  border: 2px solid rgba(255, 182, 193, 0.3);
+  box-shadow: 0 10px 40px rgba(255, 182, 193, 0.15);
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+.filter-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: #ff69b4;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-sparkle-header {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+.icon-sparkle-header::before {
+  content: '✦';
+  font-size: 18px;
+  color: #ffd93d;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.clear-filters {
+  background: none;
+  border: none;
+  color: #e891a8;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.clear-filters:hover {
+  color: #ff69b4;
+}
+
+/* Filter Sections */
+.filter-section {
+  margin-bottom: 1.5rem;
+}
+
+.filter-section:last-child {
+  margin-bottom: 0;
+}
+
+.filter-title {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffb6c1;
+  margin: 0 0 0.75rem 0;
+}
+
+/* Checkbox Styling */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.checkbox-label:hover {
+  background: rgba(255, 182, 193, 0.15);
+}
+
+.checkbox-label input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 105, 180, 0.4);
+  border-radius: 6px;
+  position: relative;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
+  background: linear-gradient(135deg, #ff69b4 0%, #ff8fab 100%);
+  border-color: #ff69b4;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.checkbox-text {
+  font-size: 0.9rem;
+  color: #ffb6c1;
+  transition: color 0.2s;
+}
+
+.checkbox-label:hover .checkbox-text,
+.checkbox-label input[type="checkbox"]:checked ~ .checkbox-text {
+  color: #ff69b4;
+}
+
+/* Filter Icons - CSS replacements for emojis */
+.filter-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Title Icons */
+.icon-sun-small,
+.icon-palette,
+.icon-sparkle-small,
+.icon-heart-small {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.icon-sun-small::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at center, #ffd93d 40%, transparent 40%);
+  position: relative;
+}
+.icon-sun-small::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: 
+    linear-gradient(0deg, #ffd93d 40%, transparent 40%),
+    linear-gradient(90deg, #ffd93d 40%, transparent 40%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.icon-palette::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50% 50% 50% 0;
+  background: linear-gradient(135deg, #ff69b4, #ff8fab, #ffb6c1);
+  transform: rotate(-45deg);
+}
+
+.icon-sparkle-small::before {
+  content: '✦';
+  font-size: 14px;
+  color: #ffd93d;
+}
+
+.icon-heart-small::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: #ff69b4;
+  clip-path: path('M8 14s-5.5-3.5-5.5-7c0-2 1.5-3.5 3.5-3.5 1.5 0 2.5 1 2 2-0.5-1 0.5-2 2-2 2 0 3.5 1.5 3.5 3.5 0 3.5-5.5 7-5.5 7z');
+}
+
+/* Weather Icons */
+.icon-tulip {
+  position: relative;
+}
+.icon-tulip::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  background: #ff69b4;
+  border-radius: 50% 50% 0 0;
+  top: 0;
+  left: 5px;
+}
+.icon-tulip::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 8px;
+  background: #6db36d;
+  bottom: 0;
+  left: 8px;
+}
+
+.icon-sun {
+  position: relative;
+}
+.icon-sun::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ffd93d;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+  box-shadow: 
+    0 -8px 0 -4px #ffd93d,
+    0 8px 0 -4px #ffd93d,
+    -8px 0 0 -4px #ffd93d,
+    8px 0 0 -4px #ffd93d,
+    -6px -6px 0 -4px #ffd93d,
+    6px -6px 0 -4px #ffd93d,
+    -6px 6px 0 -4px #ffd93d,
+    6px 6px 0 -4px #ffd93d;
+}
+
+.icon-leaf {
+  position: relative;
+}
+.icon-leaf::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 14px;
+  background: #d4843e;
+  border-radius: 0 100% 0 100%;
+  transform: rotate(-20deg);
+  top: 2px;
+  left: 3px;
+}
+.icon-leaf::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 10px;
+  background: #8b5a2b;
+  transform: rotate(-20deg);
+  top: 4px;
+  left: 9px;
+}
+
+.icon-snowflake {
+  position: relative;
+}
+.icon-snowflake::before {
+  content: '✻';
+  font-size: 16px;
+  color: #a8d4f0;
+  position: absolute;
+  top: 0;
+  left: 2px;
+}
+
+.icon-rainbow {
+  position: relative;
+  overflow: hidden;
+}
+.icon-rainbow::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 9px;
+  border-radius: 18px 18px 0 0;
+  background: linear-gradient(180deg, 
+    #ff6b6b 0%, #ff6b6b 20%, 
+    #ffd93d 20%, #ffd93d 40%, 
+    #6bcf6b 40%, #6bcf6b 60%, 
+    #6bb8ff 60%, #6bb8ff 80%, 
+    #b56bff 80%, #b56bff 100%);
+  top: 5px;
+  left: 0;
+}
+
+/* Color Icons */
+.icon-heart-pink {
+  position: relative;
+}
+.icon-heart-pink::before {
+  content: '♥';
+  font-size: 16px;
+  color: #ff69b4;
+  position: absolute;
+  top: 0;
+  left: 2px;
+}
+
+.icon-heart-pastel {
+  position: relative;
+}
+.icon-heart-pastel::before {
+  content: '♥';
+  font-size: 16px;
+  color: #ffb6c1;
+  position: absolute;
+  top: 0;
+  left: 2px;
+}
+
+.icon-heart-white {
+  position: relative;
+}
+.icon-heart-white::before {
+  content: '♥';
+  font-size: 16px;
+  color: #fff;
+  text-shadow: 0 0 2px #ccc;
+  position: absolute;
+  top: 0;
+  left: 2px;
+}
+
+.icon-heart-dark {
+  position: relative;
+}
+.icon-heart-dark::before {
+  content: '♥';
+  font-size: 16px;
+  color: #333;
+  position: absolute;
+  top: 0;
+  left: 2px;
+}
+
+/* Occasion Icons */
+.icon-sneaker {
+  position: relative;
+}
+.icon-sneaker::before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 8px;
+  background: #ff69b4;
+  border-radius: 3px 8px 3px 3px;
+  top: 6px;
+  left: 2px;
+}
+.icon-sneaker::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 4px;
+  background: #ffb6c1;
+  border-radius: 2px;
+  top: 10px;
+  left: 1px;
+}
+
+.icon-home {
+  position: relative;
+}
+.icon-home::before {
+  content: '';
+  position: absolute;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #ff69b4;
+  top: 2px;
+  left: 1px;
+}
+.icon-home::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 8px;
+  background: #ffb6c1;
+  top: 9px;
+  left: 3px;
+}
+
+.icon-hearts {
+  position: relative;
+}
+.icon-hearts::before {
+  content: '♥♥';
+  font-size: 10px;
+  color: #ff69b4;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  letter-spacing: -2px;
+}
+
+.icon-dress {
+  position: relative;
+}
+.icon-dress::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 5px;
+  background: #ff69b4;
+  border-radius: 3px 3px 0 0;
+  top: 2px;
+  left: 6px;
+}
+.icon-dress::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid #ff69b4;
+  top: 6px;
+  left: 2px;
+}
+
+.icon-sparkle {
+  position: relative;
+}
+.icon-sparkle::before {
+  content: '✦';
+  font-size: 16px;
+  color: #ffd93d;
+  position: absolute;
+  top: 0;
+  left: 2px;
+}
+
+.icon-runner {
+  position: relative;
+}
+.icon-runner::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #ff69b4;
+  border-radius: 50%;
+  top: 2px;
+  left: 6px;
+}
+.icon-runner::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 8px;
+  background: #ff69b4;
+  border-radius: 2px;
+  top: 7px;
+  left: 4px;
+  transform: skewX(-10deg);
+}
+
+/* Style Icons */
+.icon-bow {
+  position: relative;
+}
+.icon-bow::before {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 6px;
+  background: #ff69b4;
+  border-radius: 50% 0 50% 50%;
+  top: 5px;
+  left: 1px;
+}
+.icon-bow::after {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 6px;
+  background: #ff69b4;
+  border-radius: 0 50% 50% 50%;
+  top: 5px;
+  left: 10px;
+}
+
+.icon-square {
+  position: relative;
+}
+.icon-square::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  top: 3px;
+  left: 3px;
+}
+
+.icon-fire {
+  position: relative;
+}
+.icon-fire::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 14px;
+  background: linear-gradient(to top, #ff4500 0%, #ff8c00 50%, #ffd700 100%);
+  clip-path: polygon(50% 0%, 80% 30%, 100% 60%, 80% 100%, 50% 80%, 20% 100%, 0% 60%, 20% 30%);
+  top: 2px;
+  left: 3px;
+}
+
+.icon-rose {
+  position: relative;
+}
+.icon-rose::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #e74c3c;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  top: 2px;
+  left: 4px;
+}
+.icon-rose::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 6px;
+  background: #27ae60;
+  top: 11px;
+  left: 8px;
+}
+
+.icon-bolt {
+  position: relative;
+}
+.icon-bolt::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 16px;
+  background: #ffd700;
+  clip-path: polygon(60% 0%, 100% 40%, 55% 40%, 80% 100%, 0% 55%, 45% 55%, 20% 0%);
+  top: 1px;
+  left: 3px;
+}
+
+/* Main Content Area */
+.outfits-main {
+  min-height: 60vh;
+}
+
+.results-header {
+  margin-bottom: 1.5rem;
+}
+
+.results-count {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: #e891a8;
+}
+
+/* Outfits Grid */
+.outfits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Outfit Card */
+.outfit-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.outfit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(255, 182, 193, 0.25);
+}
+
+/* Outfit Collage */
+.outfit-collage {
+  position: relative;
+  height: 180px;
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.3) 0%, rgba(255, 218, 233, 0.5) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px 16px 0 0;
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+  overflow: hidden;
+}
+
+.collage-icon {
+  font-size: 4rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+/* Outfit Card CSS Icons - replacing emojis */
+
+/* Realistic Bow Icon - Like 🎀 emoji with laces */
+.outfit-icon-bow {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+/* Left loop of the bow */
+.outfit-icon-bow::before {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 22px;
+  background: linear-gradient(135deg, #ff85a2 0%, #ff69b4 30%, #e84a8a 70%, #d63384 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  top: 15px;
+  left: 8px;
+  transform: rotate(-20deg);
+  box-shadow: 
+    inset 4px 4px 8px rgba(255, 255, 255, 0.6),
+    inset -3px -3px 6px rgba(214, 51, 132, 0.5),
+    2px 3px 8px rgba(255, 105, 180, 0.4);
+}
+
+/* Right loop of the bow */
+.outfit-icon-bow::after {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 22px;
+  background: linear-gradient(225deg, #ff85a2 0%, #ff69b4 30%, #e84a8a 70%, #d63384 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  top: 15px;
+  right: 8px;
+  transform: rotate(20deg);
+  box-shadow: 
+    inset -4px 4px 8px rgba(255, 255, 255, 0.6),
+    inset 3px -3px 6px rgba(214, 51, 132, 0.5),
+    -2px 3px 8px rgba(255, 105, 180, 0.4);
+}
+
+/* Center knot of bow - created with box-shadow on a pseudo element wrapper */
+.collage-icon.outfit-icon-bow {
+  position: relative;
+}
+
+/* We need extra elements for center knot and ribbons, so we'll use box-shadows creatively */
+.collage-icon.outfit-icon-bow::before {
+  /* Add center knot using box-shadow */
+  box-shadow: 
+    inset 4px 4px 8px rgba(255, 255, 255, 0.6),
+    inset -3px -3px 6px rgba(214, 51, 132, 0.5),
+    2px 3px 8px rgba(255, 105, 180, 0.4),
+    /* Center knot */
+    24px 8px 0 0 #e84a8a,
+    25px 9px 0 0 #d63384,
+    26px 8px 0 1px #ff69b4;
+}
+
+/* Left ribbon/lace tail */
+.outfit-icon-bow .ribbon-tail-left {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  background: linear-gradient(180deg, #ff69b4 0%, #e84a8a 40%, #d63384 100%);
+  top: 32px;
+  left: 30px;
+  transform: rotate(-12deg) skewX(-5deg);
+  border-radius: 2px 2px 6px 6px;
+  box-shadow: 
+    inset 2px 0 4px rgba(255, 255, 255, 0.3),
+    1px 2px 4px rgba(214, 51, 132, 0.4);
+}
+
+.outfit-icon-bow .ribbon-tail-left::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid #d63384;
+}
+
+/* Right ribbon/lace tail */
+.outfit-icon-bow .ribbon-tail-right {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  background: linear-gradient(180deg, #ff69b4 0%, #e84a8a 40%, #d63384 100%);
+  top: 32px;
+  right: 30px;
+  transform: rotate(12deg) skewX(5deg);
+  border-radius: 2px 2px 6px 6px;
+  box-shadow: 
+    inset -2px 0 4px rgba(255, 255, 255, 0.3),
+    -1px 2px 4px rgba(214, 51, 132, 0.4);
+}
+
+.outfit-icon-bow .ribbon-tail-right::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid #d63384;
+}
+
+/* Center knot overlay */
+.outfit-icon-bow .bow-knot {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 14px;
+  background: linear-gradient(135deg, #ff69b4 0%, #e84a8a 50%, #d63384 100%);
+  border-radius: 3px;
+  box-shadow: 
+    inset 2px 2px 4px rgba(255, 255, 255, 0.5),
+    inset -1px -1px 3px rgba(214, 51, 132, 0.6),
+    0 2px 4px rgba(214, 51, 132, 0.4);
+  z-index: 5;
+}
+
+/* Swan Icon */
+.outfit-icon-swan {
+  position: relative;
+}
+.outfit-icon-swan::before {
+  content: '';
+  position: absolute;
+  width: 45px;
+  height: 35px;
+  background: linear-gradient(180deg, #fff 0%, #f0f0f0 100%);
+  border-radius: 50% 50% 30% 30%;
+  top: 35px;
+  left: 18px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.outfit-icon-swan::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 30px;
+  background: linear-gradient(180deg, #fff 0%, #f0f0f0 100%);
+  border-radius: 50% 50% 0 0;
+  top: 15px;
+  left: 25px;
+  transform: rotate(-15deg);
+  border-top: 6px solid #ff9500;
+}
+
+/* Muscle/Strength Icon */
+.outfit-icon-muscle {
+  position: relative;
+}
+.outfit-icon-muscle::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 25px;
+  background: linear-gradient(90deg, #ffb6c1 0%, #ff69b4 100%);
+  border-radius: 15px 30px 30px 15px;
+  top: 28px;
+  left: 20px;
+  box-shadow: 0 3px 10px rgba(255, 105, 180, 0.3);
+}
+.outfit-icon-muscle::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #ff69b4 0%, #ff8fab 100%);
+  border-radius: 50%;
+  top: 24px;
+  left: 48px;
+  box-shadow: 0 2px 8px rgba(255, 105, 180, 0.4);
+}
+
+/* Smiley Face Icon */
+.outfit-icon-smiley {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.outfit-icon-smiley::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(145deg, #ffeb3b 0%, #ffc107 50%, #ff9800 100%);
+  border-radius: 50%;
+  top: 15px;
+  left: 15px;
+  box-shadow: 
+    inset 4px 4px 10px rgba(255, 255, 255, 0.6),
+    inset -3px -3px 8px rgba(255, 152, 0, 0.4),
+    0 4px 15px rgba(255, 193, 7, 0.5);
+}
+
+/* Eyes using box-shadow */
+.outfit-icon-smiley::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+  top: 28px;
+  left: 28px;
+  box-shadow: 
+    16px 0 0 #333,  /* Right eye */
+    8px 18px 0 0 transparent; /* Placeholder for smile positioning */
+}
+
+/* Smile - using a child element */
+.outfit-icon-smiley .smiley-mouth {
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  border: 3px solid #333;
+  border-color: transparent transparent #333 transparent;
+  border-radius: 0 0 20px 20px;
+  top: 42px;
+  left: 30px;
+}
+
+/* Rosy cheeks */
+.outfit-icon-smiley .smiley-cheek-left,
+.outfit-icon-smiley .smiley-cheek-right {
+  position: absolute;
+  width: 8px;
+  height: 5px;
+  background: rgba(255, 105, 180, 0.5);
+  border-radius: 50%;
+  top: 40px;
+}
+
+.outfit-icon-smiley .smiley-cheek-left {
+  left: 20px;
+}
+
+.outfit-icon-smiley .smiley-cheek-right {
+  left: 52px;
+}
+
+/* Coffee Icon */
+.outfit-icon-coffee {
+  position: relative;
+}
+.outfit-icon-coffee::before {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 40px;
+  background: linear-gradient(180deg, #d4a574 0%, #8b6914 100%);
+  border-radius: 0 0 15px 15px;
+  top: 28px;
+  left: 18px;
+  box-shadow: 0 3px 10px rgba(139, 105, 20, 0.3);
+}
+.outfit-icon-coffee::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 20px;
+  border: 4px solid #8b6914;
+  border-left: none;
+  border-radius: 0 15px 15px 0;
+  top: 35px;
+  left: 53px;
+}
+
+/* Sunset Icon */
+.outfit-icon-sunset {
+  position: relative;
+}
+.outfit-icon-sunset::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 25px;
+  background: linear-gradient(180deg, #ff6b6b 0%, #ffd93d 50%, #ff9500 100%);
+  border-radius: 50px 50px 0 0;
+  top: 30px;
+  left: 15px;
+  box-shadow: 0 -5px 20px rgba(255, 149, 0, 0.4);
+}
+.outfit-icon-sunset::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 8px;
+  background: linear-gradient(90deg, #87ceeb, #4a90d9);
+  top: 55px;
+  left: 10px;
+  border-radius: 2px;
+}
+
+/* Briefcase Icon */
+.outfit-icon-briefcase {
+  position: relative;
+}
+.outfit-icon-briefcase::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 35px;
+  background: linear-gradient(180deg, #8b4513 0%, #654321 100%);
+  border-radius: 5px;
+  top: 32px;
+  left: 15px;
+  box-shadow: 0 3px 10px rgba(101, 67, 33, 0.4);
+}
+.outfit-icon-briefcase::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  border: 4px solid #654321;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  top: 22px;
+  left: 30px;
+}
+
+/* Flower Icon */
+.outfit-icon-flower {
+  position: relative;
+}
+.outfit-icon-flower::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ffb6c1;
+  border-radius: 50%;
+  top: 25px;
+  left: 30px;
+  box-shadow: 
+    -15px 10px 0 #ffb6c1,
+    15px 10px 0 #ffb6c1,
+    -10px -12px 0 #ffb6c1,
+    10px -12px 0 #ffb6c1;
+}
+.outfit-icon-flower::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #ffd93d;
+  border-radius: 50%;
+  top: 27px;
+  left: 32px;
+}
+
+/* Books Icon */
+.outfit-icon-books {
+  position: relative;
+}
+.outfit-icon-books::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 45px;
+  background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+  top: 20px;
+  left: 20px;
+  border-radius: 2px;
+  box-shadow: 
+    15px 0 0 #3498db,
+    30px 0 0 #2ecc71,
+    45px -5px 0 #9b59b6;
+}
+
+/* Sparkle Icon */
+.outfit-icon-sparkle {
+  position: relative;
+}
+.outfit-icon-sparkle::before {
+  content: '✦';
+  position: absolute;
+  font-size: 50px;
+  color: #ffd93d;
+  top: 15px;
+  left: 15px;
+  text-shadow: 0 0 20px rgba(255, 217, 61, 0.6);
+}
+
+/* Snowflake Icon */
+.outfit-icon-snowflake {
+  position: relative;
+}
+.outfit-icon-snowflake::before {
+  content: '✻';
+  position: absolute;
+  font-size: 55px;
+  color: #a8d4f0;
+  top: 12px;
+  left: 18px;
+  text-shadow: 0 0 15px rgba(168, 212, 240, 0.6);
+}
+
+/* Beach Icon */
+.outfit-icon-beach {
+  position: relative;
+}
+.outfit-icon-beach::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 25px;
+  background: linear-gradient(90deg, #f4d03f 0%, #e9c46a 100%);
+  top: 50px;
+  left: 10px;
+  border-radius: 5px;
+}
+.outfit-icon-beach::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 35px solid #ff69b4;
+  top: 15px;
+  left: 15px;
+}
+
+/* Moon Icon */
+.outfit-icon-moon {
+  position: relative;
+}
+.outfit-icon-moon::before {
+  content: '';
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #ffd93d 0%, #f4d03f 100%);
+  border-radius: 50%;
+  top: 18px;
+  left: 18px;
+  box-shadow: 
+    inset -15px -5px 0 #2c3e50,
+    0 0 20px rgba(255, 217, 61, 0.4);
+}
+
+/* Tower/Paris Icon */
+.outfit-icon-tower {
+  position: relative;
+}
+.outfit-icon-tower::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 55px solid #8b8b8b;
+  top: 12px;
+  left: 15px;
+}
+.outfit-icon-tower::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 15px;
+  background: #8b8b8b;
+  top: 0px;
+  left: 37px;
+}
+
+/* Ballet Icon */
+.outfit-icon-ballet {
+  position: relative;
+}
+.outfit-icon-ballet::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background: linear-gradient(180deg, #ffb6c1 0%, #ff69b4 100%);
+  border-radius: 50% 50% 20% 20%;
+  top: 35px;
+  left: 25px;
+  box-shadow: 0 3px 10px rgba(255, 105, 180, 0.3);
+}
+.outfit-icon-ballet::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  background: linear-gradient(180deg, #ffb6c1 0%, #ddd 100%);
+  border-radius: 5px 5px 50% 50%;
+  top: 30px;
+  left: 30px;
+}
+
+/* Cloud Icon */
+.outfit-icon-cloud {
+  position: relative;
+}
+.outfit-icon-cloud::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 30px;
+  background: linear-gradient(180deg, #fff 0%, #e8e8e8 100%);
+  border-radius: 20px;
+  top: 35px;
+  left: 15px;
+  box-shadow: 
+    -10px -10px 0 10px #fff,
+    15px -8px 0 8px #fff,
+    0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* City Icon */
+.outfit-icon-city {
+  position: relative;
+}
+.outfit-icon-city::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 50px;
+  background: linear-gradient(180deg, #34495e 0%, #2c3e50 100%);
+  top: 20px;
+  left: 20px;
+  box-shadow: 
+    18px 10px 0 #5d6d7e,
+    36px -5px 0 #85929e,
+    54px 15px 0 #34495e;
+}
+
+/* Sunflower Icon */
+.outfit-icon-sunflower {
+  position: relative;
+}
+.outfit-icon-sunflower::before {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: #8b4513;
+  border-radius: 50%;
+  top: 28px;
+  left: 29px;
+  box-shadow: 
+    0 -18px 0 5px #ffd93d,
+    12px -12px 0 5px #ffd93d,
+    18px 0 0 5px #ffd93d,
+    12px 12px 0 5px #ffd93d,
+    0 18px 0 5px #ffd93d,
+    -12px 12px 0 5px #ffd93d,
+    -18px 0 0 5px #ffd93d,
+    -12px -12px 0 5px #ffd93d;
+}
+
+/* Tennis Icon */
+.outfit-icon-tennis {
+  position: relative;
+}
+.outfit-icon-tennis::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #c8ff00 0%, #9acd32 100%);
+  border-radius: 50%;
+  top: 20px;
+  left: 20px;
+  box-shadow: 0 3px 10px rgba(154, 205, 50, 0.4);
+}
+.outfit-icon-tennis::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  top: 20px;
+  left: 20px;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+
+/* Book Icon */
+.outfit-icon-book {
+  position: relative;
+}
+.outfit-icon-book::before {
+  content: '';
+  position: absolute;
+  width: 45px;
+  height: 35px;
+  background: linear-gradient(90deg, #8b4513 3px, #f5deb3 3px, #f5deb3 calc(100% - 3px), #8b4513 calc(100% - 3px));
+  border-radius: 0 5px 5px 0;
+  top: 25px;
+  left: 18px;
+  box-shadow: 0 3px 10px rgba(139, 69, 19, 0.3);
+}
+.outfit-icon-book::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 35px;
+  background: #654321;
+  top: 25px;
+  left: 18px;
+}
+
+/* Rainbow Icon (for outfit) */
+.outfit-icon-rainbow {
+  position: relative;
+  overflow: hidden;
+}
+.outfit-icon-rainbow::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  border-radius: 60px 60px 0 0;
+  background: linear-gradient(180deg, 
+    #ff6b6b 0%, #ff6b6b 14%, 
+    #ffa500 14%, #ffa500 28%, 
+    #ffd93d 28%, #ffd93d 42%, 
+    #6bcf6b 42%, #6bcf6b 56%, 
+    #6bb8ff 56%, #6bb8ff 70%, 
+    #b56bff 70%, #b56bff 100%);
+  top: 30px;
+  left: 10px;
+}
+
+/* Yoga Icon */
+.outfit-icon-yoga {
+  position: relative;
+}
+.outfit-icon-yoga::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%);
+  border-radius: 50%;
+  top: 18px;
+  left: 30px;
+}
+.outfit-icon-yoga::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 8px;
+  background: linear-gradient(90deg, #ff69b4 0%, #ffb6c1 100%);
+  border-radius: 4px;
+  top: 45px;
+  left: 20px;
+  box-shadow: 
+    0 -15px 0 #ff69b4,
+    -8px -8px 0 #ff69b4,
+    8px -8px 0 #ff69b4;
+}
+
+/* Cherry Icon */
+.outfit-icon-cherry {
+  position: relative;
+}
+.outfit-icon-cherry::before {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  border-radius: 50%;
+  top: 40px;
+  left: 18px;
+  box-shadow: 25px -5px 0 #e74c3c;
+}
+.outfit-icon-cherry::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 25px;
+  background: #27ae60;
+  top: 15px;
+  left: 38px;
+  transform: rotate(15deg);
+  border-radius: 2px;
+}
+
+/* Diamond Icon */
+.outfit-icon-diamond {
+  position: relative;
+}
+.outfit-icon-diamond::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #e8f4f8 0%, #a8d4f0 50%, #6bb8ff 100%);
+  transform: rotate(45deg);
+  top: 25px;
+  left: 20px;
+  box-shadow: 0 5px 20px rgba(107, 184, 255, 0.4);
+}
+.outfit-icon-diamond::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 15px solid #a8d4f0;
+  top: 22px;
+  left: 20px;
+}
+
+.outfit-card:hover .collage-icon {
+  transform: scale(1.1);
+}
+
+.collage-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 105, 180, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.outfit-card:hover .collage-overlay {
+  background: rgba(255, 105, 180, 0.1);
+}
+
+.save-heart {
+  font-size: 2rem;
+  color: white;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-shadow: 0 2px 10px rgba(255, 105, 180, 0.5);
+}
+
+.outfit-card:hover .save-heart {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.save-heart:hover {
+  transform: scale(1.2);
+}
+
+/* Realistic CSS Heart */
+.save-heart-realistic {
+  position: relative;
+  width: 2.5rem;
+  height: 2.2rem;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  filter: drop-shadow(0 2px 8px rgba(255, 105, 180, 0.5));
+}
+
+.save-heart-realistic::before,
+.save-heart-realistic::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 1.25rem;
+  height: 2rem;
+  background: linear-gradient(135deg, #ff69b4 0%, #ff1493 50%, #dc143c 100%);
+  border-radius: 1.25rem 1.25rem 0 0;
+}
+
+.save-heart-realistic::before {
+  left: 1.25rem;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  box-shadow: inset -3px -3px 8px rgba(255, 255, 255, 0.4);
+}
+
+.save-heart-realistic::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+  box-shadow: inset 3px -3px 8px rgba(255, 255, 255, 0.3);
+}
+
+.outfit-card:hover .save-heart-realistic {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.save-heart-realistic:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 4px 15px rgba(255, 105, 180, 0.7));
+}
+
+.save-heart-realistic:hover::before,
+.save-heart-realistic:hover::after {
+  background: linear-gradient(135deg, #ff85c1 0%, #ff69b4 50%, #ff1493 100%);
+}
+
+/* Outfit Content */
+.outfit-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.outfit-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.style-tag {
+  padding: 0.25rem 0.6rem;
+  background: linear-gradient(135deg, rgba(255, 105, 180, 0.15) 0%, rgba(255, 182, 193, 0.2) 100%);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #ff69b4;
+  text-transform: lowercase;
+}
+
+.outfit-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: #ff69b4;
+  margin: 0 0 0.5rem 0;
+}
+
+.outfit-description {
+  font-size: 0.9rem;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.outfit-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.meta-item {
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+/* Outfit Items */
+.outfit-items {
+  background: rgba(255, 218, 233, 0.3);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.items-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ff69b4;
+  margin-bottom: 0.5rem;
+}
+
+.items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.items-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.85rem;
+  color: white;
+  margin-bottom: 0.35rem;
+  line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.items-list li::before {
+  content: '♡';
+  position: absolute;
+  left: 0;
+  font-size: 0.7rem;
+  color: #ffb6c1;
+}
+
+.items-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Save Button */
+.save-btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Pink Text */
+.pink-text {
+  color: #ff69b4 !important;
+}
+
+/* White Text */
+.white-text {
+  color: white !important;
+  -webkit-text-fill-color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.outfits-page h1.hero-title span.white-text,
+.outfits-page .hero span.white-text,
+h1 span.white-text {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 24px;
+  border: 2px dashed rgba(255, 182, 193, 0.4);
+}
+
+.empty-icon {
+  display: block;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.empty-state h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: #ff69b4;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  color: #8b6b7b;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .outfits-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-sidebar {
+    position: relative;
+    top: 0;
+  }
+  
+  .checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.25rem;
+  }
+  
+  .checkbox-label {
+    padding: 0.4rem 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .outfits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-sidebar {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,685 @@
+/* Daily Section */
+.daily-section {
+  margin-bottom: 3rem;
+}
+
+.daily-card {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 200, 220, 0.3) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 2px solid rgba(248, 200, 220, 0.5);
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(200, 160, 180, 0.2);
+}
+
+.daily-ribbon {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, var(--soft-rose) 0%, var(--blush-pink) 100%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(232, 160, 181, 0.4);
+}
+
+.daily-bow {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  animation: float 3s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+}
+
+/* Coquette Bow - same as outfit inspo */
+.css-coquette-bow {
+  position: relative;
+  width: 80px;
+  height: 50px;
+  display: inline-block;
+}
+
+.css-coquette-bow::before,
+.css-coquette-bow::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  width: 32px;
+  height: 38px;
+  background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(255, 105, 180, 0.3);
+}
+
+.css-coquette-bow::before {
+  left: 5px;
+  transform: rotate(-20deg);
+}
+
+.css-coquette-bow::after {
+  right: 5px;
+  transform: rotate(20deg);
+}
+
+.css-coquette-bow .bow-knot {
+  position: absolute;
+  left: 50%;
+  top: 15px;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: #ff69b4;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.css-coquette-bow .ribbon-tail-left,
+.css-coquette-bow .ribbon-tail-right {
+  position: absolute;
+  width: 18px;
+  height: 35px;
+  background: linear-gradient(180deg, #ff69b4 0%, #e8a0b5 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 80%, 0% 100%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  bottom: -25px;
+}
+
+.css-coquette-bow .ribbon-tail-left {
+  left: 18px;
+  transform: rotate(-10deg);
+}
+
+.css-coquette-bow .ribbon-tail-right {
+  right: 18px;
+  transform: rotate(10deg);
+}
+
+.daily-text {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #ff69b4 !important;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.daily-category {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--champagne);
+  color: var(--burgundy-soft);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.refresh-btn {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Filter Section */
+.affirmation-filter {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.filter-title {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/* Affirmations Grid */
+.affirmations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.affirmation-card {
+  padding: 2rem;
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.affirmation-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Card color variants */
+.affirmation-card-0 {
+  background: linear-gradient(135deg, rgba(248, 200, 220, 0.4) 0%, rgba(255, 255, 255, 0.8) 100%);
+  border: 1px solid rgba(248, 200, 220, 0.5);
+}
+
+.affirmation-card-1 {
+  background: linear-gradient(135deg, rgba(247, 231, 206, 0.5) 0%, rgba(255, 255, 255, 0.8) 100%);
+  border: 1px solid rgba(247, 231, 206, 0.6);
+}
+
+.affirmation-card-2 {
+  background: linear-gradient(135deg, rgba(245, 208, 208, 0.4) 0%, rgba(255, 255, 255, 0.8) 100%);
+  border: 1px solid rgba(245, 208, 208, 0.5);
+}
+
+.affirmation-card-3 {
+  background: linear-gradient(135deg, rgba(240, 235, 227, 0.6) 0%, rgba(255, 255, 255, 0.8) 100%);
+  border: 1px solid rgba(240, 235, 227, 0.7);
+}
+
+.affirmation-text {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.affirmation-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.875rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  align-self: flex-start;
+}
+
+/* Self-love Section */
+.self-love-section {
+  margin-top: 2rem;
+}
+
+.self-love-content {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(248, 200, 220, 0.2) 0%, rgba(247, 231, 206, 0.2) 100%);
+  border-radius: 30px;
+  text-align: center;
+  border: 1px solid rgba(248, 200, 220, 0.3);
+}
+
+.self-love-icon {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: float 4s ease-in-out infinite;
+}
+
+.self-love-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: #ff69b4 !important;
+  margin-bottom: 0.75rem;
+}
+
+.self-love-content p {
+  font-size: 1rem;
+  color: #e891a8 !important;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.hearts {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hearts span {
+  font-size: 1.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.hearts span:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.hearts span:nth-child(3) {
+  animation-delay: 1s;
+}
+
+/* CSS Pink Heart for Hero */
+.css-pink-heart {
+  display: inline-block;
+  position: relative;
+  width: 1.2em;
+  height: 1.1em;
+  vertical-align: middle;
+  margin-left: 0.3em;
+}
+
+.css-pink-heart::before,
+.css-pink-heart::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0.6em;
+  height: 1em;
+  background: #ff69b4;
+  border-radius: 0.6em 0.6em 0 0;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+.css-pink-heart::before {
+  left: 0.6em;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.css-pink-heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+/* CSS Star Small */
+.css-star-small {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  vertical-align: middle;
+  color: #FFD700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+.css-star-small::before {
+  content: '★';
+  font-size: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* CSS Tulip Icon */
+.css-tulip-icon {
+  display: inline-block;
+  position: relative;
+  width: 2em;
+  height: 2.5em;
+}
+
+.css-tulip-icon::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 1.2em;
+  background: linear-gradient(to top, #4a7c4e, #6b9e6f);
+  border-radius: 2px;
+}
+
+.css-tulip-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.2em;
+  height: 1.4em;
+  background: linear-gradient(to top, #ff69b4 0%, #ffb6c1 50%, #ff69b4 100%);
+  border-radius: 50% 50% 30% 30%;
+  box-shadow: 
+    inset 0 -5px 10px rgba(255, 105, 180, 0.5),
+    0 2px 8px rgba(255, 105, 180, 0.3);
+}
+
+/* CSS Hearts for bottom section */
+.css-heart-1,
+.css-heart-2,
+.css-heart-3 {
+  display: inline-block;
+  position: relative;
+  width: 1.5em;
+  height: 1.4em;
+  animation: float 3s ease-in-out infinite;
+}
+
+.css-heart-1::before,
+.css-heart-1::after,
+.css-heart-2::before,
+.css-heart-2::after,
+.css-heart-3::before,
+.css-heart-3::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0.75em;
+  height: 1.2em;
+  border-radius: 0.75em 0.75em 0 0;
+}
+
+.css-heart-1::before,
+.css-heart-1::after {
+  background: linear-gradient(to bottom, #ff69b4, #ff1493);
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+.css-heart-2::before,
+.css-heart-2::after {
+  background: linear-gradient(to bottom, #ffb6c1, #ff69b4);
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+}
+
+.css-heart-3::before,
+.css-heart-3::after {
+  background: linear-gradient(to bottom, #ff1493, #c71585);
+  box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+}
+
+.css-heart-1::before,
+.css-heart-2::before,
+.css-heart-3::before {
+  left: 0.75em;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.css-heart-1::after,
+.css-heart-2::after,
+.css-heart-3::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.css-heart-2 {
+  animation-delay: 0.5s;
+}
+
+.css-heart-3 {
+  animation-delay: 1s;
+}
+
+/* White text for hero */
+.hero-title .white-text {
+  color: white !important;
+  -webkit-text-fill-color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.hero-title .pink-text {
+  color: #ff69b4 !important;
+  -webkit-text-fill-color: #ff69b4 !important;
+}
+
+/* CSS Category Icons */
+.css-lipstick {
+  display: inline-block;
+  position: relative;
+  width: 0.8em;
+  height: 1.2em;
+  vertical-align: middle;
+}
+
+.css-lipstick::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.5em;
+  height: 0.6em;
+  background: linear-gradient(to bottom, #333 0%, #555 100%);
+  border-radius: 2px;
+}
+
+.css-lipstick::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.4em;
+  height: 0.6em;
+  background: linear-gradient(to bottom, #ff1493 0%, #c71585 100%);
+  border-radius: 3px 3px 1px 1px;
+  box-shadow: 0 0 5px rgba(255, 20, 147, 0.5);
+}
+
+.css-strength {
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+}
+
+.css-strength::before {
+  content: '';
+  position: absolute;
+  width: 0.8em;
+  height: 0.5em;
+  background: linear-gradient(90deg, #ffb6c1 0%, #ff69b4 100%);
+  border-radius: 3px 8px 8px 3px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.css-strength::after {
+  content: '';
+  position: absolute;
+  width: 0.35em;
+  height: 0.35em;
+  background: linear-gradient(135deg, #ff69b4 0%, #ff8fab 100%);
+  border-radius: 50%;
+  top: 30%;
+  right: 0;
+}
+
+.css-love-hearts {
+  display: inline-block;
+  position: relative;
+  width: 1.2em;
+  height: 1em;
+  vertical-align: middle;
+}
+
+.css-love-hearts::before,
+.css-love-hearts::after {
+  content: '';
+  position: absolute;
+  width: 0.5em;
+  height: 0.8em;
+  background: #ff69b4;
+  border-radius: 0.5em 0.5em 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.css-love-hearts::before {
+  left: 0.3em;
+  top: 0.1em;
+}
+
+.css-love-hearts::after {
+  left: 0.5em;
+  top: 0.1em;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.css-cherry-blossom {
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  background: #ffb6c1;
+  border-radius: 50%;
+  box-shadow: 
+    0.4em 0 0 #ffb6c1,
+    -0.4em 0 0 #ffb6c1,
+    0 0.4em 0 #ffb6c1,
+    0 -0.4em 0 #ffb6c1;
+}
+
+.css-cherry-blossom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.3em;
+  height: 0.3em;
+  background: #ffd700;
+  border-radius: 50%;
+}
+
+.css-star-gold {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  vertical-align: middle;
+  color: #ffd700;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.6);
+}
+
+.css-star-gold::before {
+  content: '★';
+  font-size: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.css-bath {
+  display: inline-block;
+  position: relative;
+  width: 1.2em;
+  height: 1em;
+  vertical-align: middle;
+}
+
+.css-bath::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1em;
+  height: 0.6em;
+  background: linear-gradient(to bottom, #e8e8e8 0%, #ccc 100%);
+  border-radius: 0 0 0.5em 0.5em;
+}
+
+.css-bath::after {
+  content: '';
+  position: absolute;
+  top: 0.1em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.8em;
+  height: 0.3em;
+  background: linear-gradient(to right, #87ceeb 0%, #add8e6 50%, #87ceeb 100%);
+  border-radius: 0.15em;
+}
+
+.css-sparkles {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  vertical-align: middle;
+  color: #ffd700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+}
+
+.css-sparkles::before {
+  content: '✦';
+  font-size: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.css-heart-pink {
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  height: 0.9em;
+  vertical-align: middle;
+}
+
+.css-heart-pink::before,
+.css-heart-pink::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0.5em;
+  height: 0.8em;
+  background: #ff69b4;
+  border-radius: 0.5em 0.5em 0 0;
+  box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+}
+
+.css-heart-pink::before {
+  left: 0.5em;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.css-heart-pink::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .daily-card {
+    padding: 2.5rem 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .daily-text {
+    font-size: 1.25rem;
+  }
+  
+  .affirmations-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .self-love-content {
+    padding: 2rem 1.5rem;
+    margin: 0 1rem;
+  }
+}
+
+
+
