@@ -5,18 +5,18 @@ import './Affirmations.css';
 
 // Default affirmations
 const defaultAffirmations = [
-  { id: 1, text: 'You are beautiful inside and out. Your worth is not determined by your appearance. 💖', category: 'beauty' },
-  { id: 2, text: 'You are stronger than you think. Every challenge makes you more powerful. 💪', category: 'strength' },
-  { id: 3, text: 'You deserve love, happiness, and all the good things coming your way. ✨', category: 'self-love' },
-  { id: 4, text: 'Your body is incredible. Thank it for carrying you through each day. 🌸', category: 'body-positivity' },
-  { id: 5, text: 'You are capable of achieving anything you set your mind to. Dream big! 🌟', category: 'motivation' },
-  { id: 6, text: "It's okay to rest. Taking care of yourself is productive. 💤", category: 'self-care' },
-  { id: 7, text: 'You are worthy of respect and kindness, especially from yourself. 💕', category: 'self-love' },
-  { id: 8, text: 'Your uniqueness is your superpower. Embrace what makes you different! 🦋', category: 'confidence' },
-  { id: 9, text: 'Today is a fresh start. You can do hard things. 🌅', category: 'motivation' },
-  { id: 10, text: 'You radiate confidence and grace. Others are inspired by your energy. ✨', category: 'confidence' },
+  { id: 1, text: 'You are beautiful inside and out. Your worth is not determined by your appearance.', category: 'beauty' },
+  { id: 2, text: 'You are stronger than you think. Every challenge makes you more powerful.', category: 'strength' },
+  { id: 3, text: 'You deserve love, happiness, and all the good things coming your way.', category: 'self-love' },
+  { id: 4, text: 'Your body is incredible. Thank it for carrying you through each day.', category: 'body-positivity' },
+  { id: 5, text: 'You are capable of achieving anything you set your mind to. Dream big!', category: 'motivation' },
+  { id: 6, text: "It's okay to rest. Taking care of yourself is productive.", category: 'self-care' },
+  { id: 7, text: 'You are worthy of respect and kindness, especially from yourself.', category: 'self-love' },
+  { id: 8, text: 'Your uniqueness is your superpower. Embrace what makes you different!', category: 'confidence' },
+  { id: 9, text: 'Today is a fresh start. You can do hard things.', category: 'motivation' },
+  { id: 10, text: 'You radiate confidence and grace. Others are inspired by your energy.', category: 'confidence' },
   { id: 11, text: 'Progress, not perfection. Every small step counts!', category: 'motivation' },
-  { id: 12, text: 'You are allowed to take up space and be seen. Shine bright! 💫', category: 'confidence' }
+  { id: 12, text: 'You are allowed to take up space and be seen. Shine bright!', category: 'confidence' }
 ];
 
 function Affirmations() {
@@ -55,7 +55,7 @@ function Affirmations() {
   const getCategoryIcon = (category) => {
     const icons = {
       'beauty': <span className="css-lipstick"></span>,
-      'strength': <span className="css-strength"></span>,
+      'strength': <span className="css-smiley-filter"></span>,
       'self-love': <span className="css-love-hearts"></span>,
       'body-positivity': <span className="css-cherry-blossom"></span>,
       'motivation': <span className="css-star-gold"></span>,
@@ -110,7 +110,7 @@ function Affirmations() {
               className={`filter-btn ${!selectedCategory ? 'active' : ''}`}
               onClick={() => setSelectedCategory(null)}
             >
-              all 💖
+              <span className="css-heart-pink"></span> all
             </button>
             {categories.map((category) => (
               <button
@@ -118,7 +118,13 @@ function Affirmations() {
                 className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
                 onClick={() => setSelectedCategory(category)}
               >
-                {getCategoryIcon(category)} {category}
+                {category === 'strength' ? (
+                  <span className="css-smiley-filter">
+                    <span className="smiley-mouth"></span>
+                  </span>
+                ) : (
+                  getCategoryIcon(category)
+                )} {category}
               </button>
             ))}
           </div>

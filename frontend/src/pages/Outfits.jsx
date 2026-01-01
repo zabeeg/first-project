@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Hero from '../components/Hero';
 import Card from '../components/Card';
 import './Outfits.css';
@@ -268,6 +268,237 @@ const outfitInspo = [
     occasion: ['semi-formal', 'everyday'],
     style: ['minimalist', 'vintage'],
     items: ['Cashmere sweater', 'Tailored trousers', 'Loafers', 'Pearl jewelry', 'Structured handbag']
+  },
+  { 
+    id: 25, 
+    title: 'Brunch Beauty', 
+    description: 'Chic and comfortable for weekend brunch with friends',
+    iconClass: 'outfit-icon-coffee',
+    weather: ['spring', 'summer'],
+    colors: ['pastel', 'neutral'],
+    occasion: ['casual', 'everyday'],
+    style: ['trendy', 'minimalist'],
+    items: ['Flowy midi dress', 'Strappy sandals', 'Woven bag', 'Sunglasses', 'Gold bangles']
+  },
+  { 
+    id: 26, 
+    title: 'Movie Night Cozy', 
+    description: 'Comfy yet cute for a night in with friends',
+    iconClass: 'outfit-icon-cloud',
+    weather: ['fall', 'winter'],
+    colors: ['neutral', 'pastel'],
+    occasion: ['casual'],
+    style: ['minimalist'],
+    items: ['Matching loungewear set', 'Fuzzy slippers', 'Oversized blanket scarf', 'Messy bun', 'Lip mask']
+  },
+  { 
+    id: 27, 
+    title: 'Graduation Glam', 
+    description: 'Elegant and celebratory for your big day',
+    iconClass: 'outfit-icon-sparkle',
+    weather: ['spring', 'summer'],
+    colors: ['neutral', 'pastel', 'colorful'],
+    occasion: ['formal', 'semi-formal'],
+    style: ['minimalist', 'trendy'],
+    items: ['Elegant midi dress', 'Block heels', 'Delicate jewelry', 'Polished makeup', 'Structured clutch']
+  },
+  { 
+    id: 28, 
+    title: 'Airport Chic', 
+    description: 'Travel in style and comfort',
+    iconClass: 'outfit-icon-sunset',
+    weather: ['all-seasons'],
+    colors: ['neutral', 'dark'],
+    occasion: ['casual', 'everyday'],
+    style: ['minimalist', 'trendy'],
+    items: ['Matching sweater set', 'Wide leg pants', 'Clean sneakers', 'Crossbody bag', 'Silk scrunchie']
+  },
+  { 
+    id: 29, 
+    title: 'Art Gallery Date', 
+    description: 'Sophisticated and artsy for cultural outings',
+    iconClass: 'outfit-icon-tower',
+    weather: ['fall', 'spring'],
+    colors: ['dark', 'neutral'],
+    occasion: ['date-night', 'semi-formal'],
+    style: ['minimalist', 'vintage'],
+    items: ['Turtleneck dress', 'Pointed boots', 'Statement earrings', 'Leather tote', 'Red lip']
+  },
+  { 
+    id: 30, 
+    title: 'Picnic Princess', 
+    description: 'Sweet and romantic for outdoor dates',
+    iconClass: 'outfit-icon-flower',
+    weather: ['spring', 'summer'],
+    colors: ['pastel', 'pink', 'colorful'],
+    occasion: ['casual', 'date-night'],
+    style: ['coquette', 'vintage'],
+    items: ['Gingham dress', 'Straw hat', 'White sneakers', 'Wicker basket bag', 'Ribbon hair ties']
+  },
+  { 
+    id: 31, 
+    title: 'Concert Ready', 
+    description: 'Stand out in the crowd at your favorite show',
+    iconClass: 'outfit-icon-sparkle',
+    weather: ['summer', 'spring'],
+    colors: ['colorful', 'dark'],
+    occasion: ['casual'],
+    style: ['trendy'],
+    items: ['Band tee', 'Leather pants', 'Platform boots', 'Layered necklaces', 'Statement belt']
+  },
+  { 
+    id: 32, 
+    title: 'Spa Day Look', 
+    description: 'Relaxed and fresh for self-care days',
+    iconClass: 'outfit-icon-cloud',
+    weather: ['all-seasons'],
+    colors: ['neutral', 'pastel'],
+    occasion: ['casual'],
+    style: ['minimalist'],
+    items: ['Linen set', 'Slide sandals', 'Headband', 'Minimal jewelry', 'Fresh face']
+  },
+  { 
+    id: 33, 
+    title: 'Shopping Spree', 
+    description: 'Practical yet stylish for a day of retail therapy',
+    iconClass: 'outfit-icon-briefcase',
+    weather: ['spring', 'fall'],
+    colors: ['neutral', 'dark'],
+    occasion: ['casual', 'everyday'],
+    style: ['trendy', 'minimalist'],
+    items: ['Blazer', 'Straight jeans', 'Loafers', 'Large tote', 'Chic sunglasses']
+  },
+  { 
+    id: 34, 
+    title: 'Birthday Queen', 
+    description: 'Make a statement on your special day',
+    iconClass: 'outfit-icon-sparkle',
+    weather: ['all-seasons'],
+    colors: ['pink', 'colorful'],
+    occasion: ['formal', 'date-night'],
+    style: ['trendy', 'coquette'],
+    items: ['Sequin dress', 'Strappy heels', 'Birthday sash', 'Statement jewelry', 'Glam makeup']
+  },
+  { 
+    id: 35, 
+    title: 'Farmers Market', 
+    description: 'Casual and cute for weekend errands',
+    iconClass: 'outfit-icon-sunflower',
+    weather: ['spring', 'summer'],
+    colors: ['neutral', 'colorful'],
+    occasion: ['casual', 'everyday'],
+    style: ['minimalist', 'vintage'],
+    items: ['Linen pants', 'Tank top', 'Straw tote', 'Sandals', 'Minimal makeup']
+  },
+  { 
+    id: 36, 
+    title: 'First Day Fit', 
+    description: 'Make a great impression on day one',
+    iconClass: 'outfit-icon-books',
+    weather: ['fall', 'spring'],
+    colors: ['neutral', 'pastel'],
+    occasion: ['everyday', 'semi-formal'],
+    style: ['minimalist', 'trendy'],
+    items: ['Blouse', 'Tailored pants', 'Mules', 'Tote bag', 'Delicate necklace']
+  },
+  { 
+    id: 37, 
+    title: 'Rainy Day Chic', 
+    description: 'Stay stylish even in wet weather',
+    iconClass: 'outfit-icon-cloud',
+    weather: ['spring', 'fall'],
+    colors: ['neutral', 'dark'],
+    occasion: ['casual', 'everyday'],
+    style: ['minimalist', 'trendy'],
+    items: ['Trench coat', 'Ankle boots', 'Umbrella', 'Waterproof bag', 'Hair up']
+  },
+  { 
+    id: 38, 
+    title: 'Thanksgiving Cozy', 
+    description: 'Comfortable and festive for family gatherings',
+    iconClass: 'outfit-icon-coffee',
+    weather: ['fall'],
+    colors: ['neutral', 'colorful'],
+    occasion: ['casual', 'semi-formal'],
+    style: ['minimalist', 'vintage'],
+    items: ['Cozy sweater dress', 'Knee-high boots', 'Gold jewelry', 'Belt', 'Natural makeup']
+  },
+  { 
+    id: 39, 
+    title: 'New Years Eve', 
+    description: 'Ring in the new year with glamour',
+    iconClass: 'outfit-icon-moon',
+    weather: ['winter'],
+    colors: ['dark', 'colorful'],
+    occasion: ['formal'],
+    style: ['trendy'],
+    items: ['Sparkly jumpsuit', 'Strappy heels', 'Statement earrings', 'Clutch', 'Bold lip']
+  },
+  { 
+    id: 40, 
+    title: 'Valentine\'s Day', 
+    description: 'Romantic and feminine for date night',
+    iconClass: 'outfit-icon-bow',
+    weather: ['winter'],
+    colors: ['pink', 'dark'],
+    occasion: ['date-night', 'semi-formal'],
+    style: ['coquette', 'trendy'],
+    items: ['Red dress', 'Heels', 'Heart jewelry', 'Mini bag', 'Romantic makeup']
+  },
+  { 
+    id: 41, 
+    title: 'Spring Break Ready', 
+    description: 'Vacation vibes for tropical getaways',
+    iconClass: 'outfit-icon-beach',
+    weather: ['summer', 'spring'],
+    colors: ['colorful', 'pastel'],
+    occasion: ['casual'],
+    style: ['trendy'],
+    items: ['Maxi dress', 'Platform sandals', 'Beach bag', 'Sun hat', 'Waterproof makeup']
+  },
+  { 
+    id: 42, 
+    title: 'Bookstore Date', 
+    description: 'Intellectual and cozy for quiet outings',
+    iconClass: 'outfit-icon-book',
+    weather: ['fall', 'winter'],
+    colors: ['neutral', 'dark'],
+    occasion: ['casual', 'date-night'],
+    style: ['vintage', 'minimalist'],
+    items: ['Oversized cardigan', 'Turtleneck', 'Corduroy pants', 'Loafers', 'Reading glasses']
+  },
+  { 
+    id: 43, 
+    title: 'Sleepover Style', 
+    description: 'Cute and comfy for staying over',
+    iconClass: 'outfit-icon-cloud',
+    weather: ['all-seasons'],
+    colors: ['pastel', 'pink'],
+    occasion: ['casual'],
+    style: ['coquette'],
+    items: ['Matching pajama set', 'Fuzzy socks', 'Silk eye mask', 'Hair ties', 'Skincare bag']
+  },
+  { 
+    id: 44, 
+    title: 'Ice Cream Date', 
+    description: 'Sweet and playful for casual outings',
+    iconClass: 'outfit-icon-cherry',
+    weather: ['spring', 'summer'],
+    colors: ['pastel', 'colorful'],
+    occasion: ['casual', 'date-night'],
+    style: ['coquette', 'trendy'],
+    items: ['Ruffle top', 'Denim shorts', 'Platform sneakers', 'Crossbody bag', 'Fun earrings']
+  },
+  { 
+    id: 45, 
+    title: 'Study Session Cute', 
+    description: 'Look put together while hitting the books',
+    iconClass: 'outfit-icon-books',
+    weather: ['all-seasons'],
+    colors: ['neutral', 'pastel'],
+    occasion: ['casual', 'everyday'],
+    style: ['minimalist'],
+    items: ['Crewneck sweatshirt', 'Bike shorts', 'Clean sneakers', 'Backpack', 'Hair claw']
   }
 ];
 
@@ -311,6 +542,37 @@ function Outfits() {
     occasion: [],
     style: []
   });
+  const [savedOutfits, setSavedOutfits] = useState(() => {
+    const saved = localStorage.getItem('savedOutfits');
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [showBoard, setShowBoard] = useState(false);
+  const [saveSuccess, setSaveSuccess] = useState(null);
+
+  useEffect(() => {
+    localStorage.setItem('savedOutfits', JSON.stringify(savedOutfits));
+  }, [savedOutfits]);
+
+  const handleSaveOutfit = (outfit) => {
+    if (savedOutfits.some(o => o.id === outfit.id)) {
+      // Already saved, remove it
+      setSavedOutfits(savedOutfits.filter(o => o.id !== outfit.id));
+      setSaveSuccess({ id: outfit.id, action: 'removed' });
+    } else {
+      // Save it
+      setSavedOutfits([...savedOutfits, outfit]);
+      setSaveSuccess({ id: outfit.id, action: 'saved' });
+    }
+    setTimeout(() => setSaveSuccess(null), 2000);
+  };
+
+  const handleRemoveFromBoard = (outfitId) => {
+    setSavedOutfits(savedOutfits.filter(o => o.id !== outfitId));
+  };
+
+  const isOutfitSaved = (outfitId) => {
+    return savedOutfits.some(o => o.id === outfitId);
+  };
 
   const handleFilterChange = (category, value) => {
     setSelectedFilters(prev => {
@@ -353,6 +615,104 @@ function Outfits() {
 
   return (
     <div className="outfits-page page">
+      {/* Clipboard Board Modal */}
+      {showBoard && (
+        <div className="board-modal-overlay" onClick={() => setShowBoard(false)}>
+          <div className="clipboard-board" onClick={e => e.stopPropagation()}>
+            {/* Clipboard Clip at top */}
+            <div className="clipboard-clip">
+              <div className="clip-base"></div>
+              <div className="clip-lever"></div>
+            </div>
+            
+            {/* Clipboard Paper */}
+            <div className="clipboard-paper">
+              <div className="paper-header">
+                <h2>my outfit board</h2>
+                <button className="close-board-btn" onClick={() => setShowBoard(false)}>✕</button>
+              </div>
+              
+              <div className="paper-content">
+                {savedOutfits.length === 0 ? (
+                  <div className="board-empty">
+                    <div className="empty-clipboard-icon">
+                      <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="#ffb6c1" strokeWidth="1.5">
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                        <line x1="12" y1="11" x2="12" y2="17"/>
+                        <line x1="9" y1="14" x2="15" y2="14"/>
+                      </svg>
+                    </div>
+                    <h3>no saved outfits yet!</h3>
+                    <p>click "save to board" on any outfit to pin it here</p>
+                  </div>
+                ) : (
+                  <div className="pinned-photos-grid">
+                    {savedOutfits.map((outfit, index) => (
+                      <div 
+                        key={outfit.id} 
+                        className="pinned-photo"
+                        style={{ 
+                          '--rotation': `${(index % 2 === 0 ? -1 : 1) * (Math.random() * 4 + 1)}deg`,
+                          '--delay': `${index * 0.1}s`
+                        }}
+                      >
+                        {/* Pin/Pushpin */}
+                        <div className="photo-pin">
+                          <div className="pin-head"></div>
+                          <div className="pin-point"></div>
+                        </div>
+                        
+                        {/* Photo Polaroid Style */}
+                        <div className="photo-frame">
+                          <div className="photo-image">
+                            {/* Simple SVG icons for the board */}
+                            <div className={`board-icon board-icon-${outfit.iconClass.replace('outfit-icon-', '')}`}></div>
+                          </div>
+                          <div className="photo-caption">
+                            <h4>{outfit.title}</h4>
+                            <p className="photo-description">{outfit.description}</p>
+                            <div className="photo-items">
+                              {outfit.items.slice(0, 3).map((item, i) => (
+                                <span key={i} className="photo-item">{item}</span>
+                              ))}
+                              {outfit.items.length > 3 && (
+                                <span className="photo-item-more">+{outfit.items.length - 3} more</span>
+                              )}
+                            </div>
+                            <div className="caption-tags">
+                              {outfit.style.map((s, i) => (
+                                <span key={i} className="caption-tag">{s}</span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Remove button */}
+                        <button 
+                          className="remove-pin-btn"
+                          onClick={() => handleRemoveFromBoard(outfit.id)}
+                          title="Unpin from board"
+                        >
+                          x
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+              
+              {/* Paper texture lines */}
+              <div className="paper-lines">
+                {[...Array(20)].map((_, i) => (
+                  <div key={i} className="paper-line"></div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Hero
         variant="small"
         title={<><span style={{color: '#ffffff', WebkitTextFillColor: '#ffffff', textShadow: '0 2px 8px rgba(0,0,0,0.3), 0 0 25px rgba(255,255,255,0.8)'}}>outfit</span> <span className="pink-text">inspo</span> <span style={{color: '#ffffff', WebkitTextFillColor: '#ffffff', textShadow: '0 2px 8px rgba(0,0,0,0.3), 0 0 25px rgba(255,255,255,0.8)'}}>✧</span></>}
@@ -363,6 +723,21 @@ function Outfits() {
         <div className="outfits-layout">
           {/* Sidebar Filters */}
           <aside className="filter-sidebar">
+            {/* Clipboard/Board Button */}
+            <button 
+              className="board-btn"
+              onClick={() => setShowBoard(true)}
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+              </svg>
+              my board
+              {savedOutfits.length > 0 && (
+                <span className="board-count">{savedOutfits.length}</span>
+              )}
+            </button>
+
             <div className="filter-header">
               <h3><span className="icon-sparkle-header"></span> find your look</h3>
               {hasActiveFilters && (
@@ -515,8 +890,11 @@ function Outfits() {
                       </ul>
                     </div>
 
-                    <button className="btn btn-primary save-btn">
-                      💝 save to board
+                    <button 
+                      className={`btn btn-primary save-btn ${isOutfitSaved(outfit.id) ? 'saved' : ''}`}
+                      onClick={() => handleSaveOutfit(outfit)}
+                    >
+                      {isOutfitSaved(outfit.id) ? 'saved ✓' : 'save to board'}
                     </button>
                   </div>
                 </Card>

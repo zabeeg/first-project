@@ -1,0 +1,323 @@
+.healthy-diet-page {
+  padding-bottom: 4rem;
+}
+
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.category-filter .filter-btn {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 218, 233, 0.85) 0%, rgba(255, 240, 245, 0.9) 100%);
+  border: 1px solid rgba(255, 182, 193, 0.5);
+  border-radius: 25px;
+  color: #ff69b4;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category-filter .filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4);
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.9) 0%, rgba(255, 218, 233, 0.95) 100%);
+}
+
+.category-filter .filter-btn.active {
+  background: linear-gradient(135deg, #ff69b4 0%, #ff85a2 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+  transform: translateY(-2px);
+}
+
+.results-count {
+  text-align: center;
+  color: #ff69b4;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.category-filter .filter-icon {
+  font-size: 1.2rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Apple Icon for All Foods - Realistic Red Apple */
+.css-apple-filter {
+  position: relative;
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.css-apple-filter::before {
+  content: '';
+  position: absolute;
+  width: 1em;
+  height: 1.1em;
+  background: 
+    radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.4) 0%, transparent 40%),
+    linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 25%, #dc143c 50%, #b22222 75%, #8b0000 100%);
+  border-radius: 45% 45% 50% 50% / 55% 55% 45% 45%;
+  top: 0.2em;
+  left: 0.2em;
+  box-shadow: 
+    inset -3px -3px 8px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 6px rgba(255, 255, 255, 0.2),
+    2px 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.css-apple-filter::after {
+  content: '';
+  position: absolute;
+  width: 0.12em;
+  height: 0.25em;
+  background: linear-gradient(to bottom, #8b4513, #654321);
+  border-radius: 0.05em;
+  top: 0.05em;
+  left: 0.64em;
+  transform: rotate(-10deg);
+  box-shadow: 
+    0.08em -0.08em 0 0.08em #228b22;
+}
+
+/* Croissant Icon for Breakfast - Realistic Golden Croissant */
+.css-croissant {
+  position: relative;
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.css-croissant::before {
+  content: '';
+  position: absolute;
+  width: 1.2em;
+  height: 0.7em;
+  background: 
+    radial-gradient(ellipse at 50% 30%, rgba(255, 220, 180, 0.8) 0%, transparent 50%),
+    linear-gradient(180deg, #f4d03f 0%, #d4a574 20%, #c9a86c 40%, #b8860b 60%, #8b6914 80%, #654321 100%);
+  border-radius: 60% 60% 40% 40% / 100% 100% 0% 0%;
+  top: 0.35em;
+  left: 0.1em;
+  transform: scaleX(1.1);
+  box-shadow: 
+    inset 0 3px 6px rgba(255, 255, 255, 0.4),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.3),
+    2px 3px 6px rgba(0, 0, 0, 0.2);
+  clip-path: polygon(0% 100%, 10% 50%, 25% 20%, 50% 0%, 75% 20%, 90% 50%, 100% 100%, 85% 80%, 50% 90%, 15% 80%);
+}
+
+.css-croissant::after {
+  content: '';
+  position: absolute;
+  width: 0.15em;
+  height: 0.4em;
+  background: linear-gradient(to bottom, #d4a574, #8b6914);
+  border-radius: 50%;
+  top: 0.5em;
+  left: 0.62em;
+  box-shadow: 
+    -0.2em 0.05em 0 0 #c9a86c,
+    0.2em 0.05em 0 0 #c9a86c;
+}
+
+/* Salad Bowl Icon for Lunch - Realistic Salad */
+.css-salad {
+  position: relative;
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.css-salad::before {
+  content: '';
+  position: absolute;
+  width: 1.1em;
+  height: 0.55em;
+  background: 
+    linear-gradient(to bottom, #f5f5dc 0%, #e8e4c9 50%, #d4c896 100%);
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  bottom: 0.15em;
+  left: 0.15em;
+  box-shadow: 
+    inset 0 -4px 8px rgba(0, 0, 0, 0.15),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    2px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.css-salad::after {
+  content: '';
+  position: absolute;
+  width: 0.25em;
+  height: 0.35em;
+  background: 
+    radial-gradient(ellipse at 50% 30%, #90ee90 0%, #228b22 50%, #006400 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  top: 0.25em;
+  left: 0.35em;
+  box-shadow: 
+    0.25em 0.05em 0 -0.02em #32cd32,
+    0.5em 0.1em 0 -0.02em #228b22,
+    0.12em 0.2em 0 0 #ff6347,
+    0.38em 0.25em 0 0 #ffa500,
+    -0.08em 0.15em 0 0 #9acd32;
+}
+
+/* Plate/Dining Icon for Dinner - Realistic Plate with Utensils */
+.css-plate {
+  position: relative;
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.css-plate::before {
+  content: '';
+  position: absolute;
+  width: 0.9em;
+  height: 0.9em;
+  background: 
+    radial-gradient(ellipse at 50% 40%, #ffffff 0%, #f8f8f8 30%, #e8e8e8 60%, #d0d0d0 100%);
+  border-radius: 50%;
+  top: 0.25em;
+  left: 0.25em;
+  box-shadow: 
+    inset 0 0 0 2px #c0c0c0,
+    inset 0 -3px 6px rgba(0, 0, 0, 0.1),
+    2px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.css-plate::after {
+  content: '';
+  position: absolute;
+  width: 0.08em;
+  height: 0.5em;
+  background: linear-gradient(to bottom, #c0c0c0 0%, #a0a0a0 50%, #808080 100%);
+  border-radius: 0.04em;
+  top: 0.7em;
+  left: 0.15em;
+  transform: rotate(-30deg);
+  box-shadow: 
+    0.95em 0.15em 0 0 #b0b0b0;
+}
+
+/* Strawberry Icon for Snacks - Realistic Strawberry */
+.css-strawberry {
+  position: relative;
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.css-strawberry::before {
+  content: '';
+  position: absolute;
+  width: 0.9em;
+  height: 1em;
+  background: 
+    radial-gradient(ellipse at 30% 25%, rgba(255, 200, 200, 0.5) 0%, transparent 35%),
+    linear-gradient(180deg, #ff6b6b 0%, #ff4757 25%, #ee2c4a 50%, #dc143c 75%, #b22222 100%);
+  border-radius: 45% 45% 50% 50% / 35% 35% 65% 65%;
+  top: 0.25em;
+  left: 0.25em;
+  box-shadow: 
+    inset -2px -2px 6px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.2),
+    2px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.css-strawberry::after {
+  content: '';
+  position: absolute;
+  width: 0.5em;
+  height: 0.2em;
+  background: linear-gradient(to bottom, #228b22 0%, #006400 100%);
+  border-radius: 50% 50% 0 0;
+  top: 0.15em;
+  left: 0.45em;
+  box-shadow: 
+    -0.12em 0.02em 0 0 #32cd32,
+    0.12em 0.02em 0 0 #32cd32,
+    -0.06em -0.05em 0 0 #228b22,
+    0.06em -0.05em 0 0 #228b22;
+}
+
+.foods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.food-card {
+  background: linear-gradient(135deg, rgba(255, 218, 233, 0.85) 0%, rgba(255, 240, 245, 0.9) 100%);
+  border: 1px solid rgba(255, 182, 193, 0.5);
+}
+
+.food-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+.food-calories {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: #ff69b4;
+  font-weight: 600;
+}
+
+.food-category {
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 182, 193, 0.3);
+  border-radius: 15px;
+  font-size: 0.75rem;
+  color: #ff69b4;
+  text-transform: capitalize;
+}
+
+.food-benefits {
+  margin-top: 1rem;
+}
+
+.benefits-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: #ff69b4;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.food-benefits p {
+  font-size: 0.85rem;
+  color: #e891a8;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .foods-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .category-filter {
+    gap: 0.5rem;
+  }
+  
+  .category-filter .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+

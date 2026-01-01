@@ -5,6 +5,7 @@ function Card({
   description, 
   image, 
   icon, 
+  iconClass,
   tags = [], 
   badge,
   children,
@@ -21,7 +22,9 @@ function Card({
       )}
       
       {icon && !image && (
-        <div className="card-icon">{icon}</div>
+        <div className={`card-icon ${iconClass || ''}`}>
+          {iconClass ? '' : icon}
+        </div>
       )}
       
       <div className="card-content">
